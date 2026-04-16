@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Host Advantage in Olympic Medal Performance</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+<div class="page">
+    <h1>Host Advantage in Olympic Medal Performance</h1>
+    <p class="subtitle">
+        Host advantage = Percentage change in number of medals in host year relative to baseline medal counts.<br>
+        Baseline is defined as the average medal count from <strong>1 Olympic Games before</strong> and <strong>1 Olympic Games after</strong> the host year.<br>
+
+    </p>
+
+    <div class="controls">
+        <div class="control-row">
+            <label for="season-select">Season:</label>
+            <select id="season-select">
+                <option value="All">All</option>
+                <option value="Summer">Summer</option>
+                <option value="Winter">Winter</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="legend-row">
+        <div class="legend-item">
+            <span class="legend-swatch positive"></span>
+            <span>Positive host effect</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-swatch negative"></span>
+            <span>Negative host effect</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-line"></span>
+            <span>Average host effect</span>
+        </div>
+    </div>
+
+    <div class="layout">
+        <div class="chart-panel">
+            <p class="chart-note">Click a bar to view the host nation’s performance before, during, and after the host year in the detail panel.</p>
+            <svg id="bar-chart" width="980" height="720"></svg>
+        </div>
+
+        <div class="detail-panel">
+            <h2 id="detail-title">Click a bar to inspect a host nation</h2>
+
+            <div class="mini-controls">
+                <span class="mini-label">Medal type:</span>
+                <button id="metric-total" class="metric-btn active total-btn">Total</button>
+                <button id="metric-gold" class="metric-btn gold-btn">Gold</button>
+                <button id="metric-silver" class="metric-btn silver-btn">Silver</button>
+                <button id="metric-bronze" class="metric-btn bronze-btn">Bronze</button>
+            </div>
+
+            <svg id="detail-chart" width="420" height="320"></svg>
+
+            <div id="detail-stats" class="detail-stats">
+                <p><strong>Country:</strong> <span id="stat-country">—</span></p>
+                <p><strong>Host year:</strong> <span id="stat-year">—</span></p>
+                <p><strong>Host medals:</strong> <span id="stat-host">—</span></p>
+                <p><strong>Baseline:</strong> <span id="stat-baseline">—</span></p>
+                <p class="baseline-note">
+                    <em id="baseline-note-text">Baseline shown here refers to total medals and is calculated as the average of 1 Games before and 1 Games after the host year.</em>
+                </p>
+                <p><strong>Host effect:</strong> <span id="stat-effect">—</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="tooltip" class="tooltip"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

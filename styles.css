@@ -1,0 +1,216 @@
+/* page-level styling*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+    color: #000000;
+}
+
+.page {
+    padding: 30px;
+}
+
+/* title and subtitle styling*/
+h1 {
+    margin: 0 0 6px 0;
+    font-size: 30px;
+}
+
+.subtitle {
+    margin: 0 0 18px 0;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 1100px;
+}
+
+/* control area layout */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.control-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* label styling */
+label,
+.mini-label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* medal button styling (active-state style)*/
+.metric-btn.active {
+    color: white;
+}
+
+.total-btn.active {
+    background: #333;
+    border-color: #333;
+}
+
+.gold-btn.active {
+    background: #b8860b;
+    border-color: #b8860b;
+}
+
+.silver-btn.active {
+    background: #7f8c8d;
+    border-color: #7f8c8d;
+}
+
+.bronze-btn.active {
+    background: #a55a2a;
+    border-color: #a55a2a;
+}
+
+/* legend styling */
+.legend-row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 12px 0 16px 0;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.legend-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.legend-swatch.positive {
+    background: #c84f4f;
+}
+
+.legend-swatch.negative {
+    background: #3b7fb6;
+}
+
+.legend-line {
+    width: 28px;
+    height: 0;
+    border-top: 1.5px dashed #666;
+    display: inline-block;
+}
+
+/* layout for the two panels (main and detail) */
+.layout {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.chart-panel,
+.detail-panel {
+    background: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    padding: 14px;
+    box-sizing: border-box;
+}
+
+/* this is to separate the sizing between the two panels, main chart expands to take up the remaining space */
+.chart-panel {
+    flex: 1;
+}
+
+/* detail panel styling */
+.detail-panel {
+    width: 460px;
+}
+
+#detail-title {
+    margin: 4px 0 10px 0;
+    font-size: 18px;
+}
+
+.mini-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.detail-stats {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.baseline-note {
+    color: #666;
+    margin-top: -4px;
+}
+
+/* tooltip styling */
+/* referenced from "https://medium.com/free-code-camp/a-step-by-step-guide-to-making-pure-css-tooltips-3d5a3e237346" */
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: left;
+    color: #fff;
+    padding: 10px 10px;
+    font-size: 14px;
+    max-width: 300px;
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+/* chart styling */
+.axis-label {
+    font-size: 14px;
+    fill: #444;
+}
+
+/* this changes the mouse cursor design to a pointer when hovering over bars to show that it is clickable */
+.bar {
+    cursor: pointer;
+}
+
+/* this was later added as tooltip didn't appear for countries with very thin bar (Canada, Greece, etc) */
+.hitbox {
+    cursor: pointer;
+    fill: transparent;
+}
+
+.zero-line,
+.avg-line {
+    stroke-dasharray: 5 4;
+}
+
+.zero-line {
+    stroke: #8b8b8b;
+}
+
+.avg-line {
+    stroke: #555;
+    stroke-width: 1.5px;
+}
+
+.tick text {
+    font-size: 11px;
+}
+
+/* note styling, added at the end to make sure users click the bar to see the line chart on the left */
+.chart-note {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #666;
+}
